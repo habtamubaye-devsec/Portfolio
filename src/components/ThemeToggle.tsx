@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 
 export default function ThemeToggle() {
     const [mounted, setMounted] = useState(false);
-    const { theme, setTheme } = useTheme();
+    const { setTheme, resolvedTheme } = useTheme();
 
     useEffect(() => {
         setMounted(true);
@@ -19,14 +19,14 @@ export default function ThemeToggle() {
 
     return (
         <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full bg-secondary transition-colors hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary"
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+            className="p-2 rounded-full bg-secondary text-foreground transition-colors hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary"
             aria-label="Toggle dark mode"
         >
-            {theme === "dark" ? (
+            {resolvedTheme === "dark" ? (
                 <Sun className="w-5 h-5 text-yellow-500" />
             ) : (
-                <Moon className="w-5 h-5 text-slate-700" />
+                <Moon className="w-5 h-5" />
             )}
         </button>
     );

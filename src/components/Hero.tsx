@@ -7,7 +7,7 @@ import { ArrowRight, Download } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
             {/* Background blobs */}
             <div className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-purple-400/20 rounded-full blur-3xl animate-pulse" />
@@ -21,14 +21,14 @@ export default function Hero() {
                     <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-blue-600 uppercase bg-blue-50 dark:bg-blue-900/30 rounded-full">
                         Available for New Projects
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-                        Hi, I'm <span className="text-blue-600">{portfolioData.name.split(" ")[0]}</span>
+                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6">
+                        Hi, I'm <span className="text-blue-600 font-black">{portfolioData.name.split(" ")[0]}</span>
                     </h1>
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2, duration: 1 }}
-                        className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto"
+                        className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto text-center"
                     >
                         {portfolioData.role}
                     </motion.p>
@@ -50,6 +50,17 @@ export default function Hero() {
                             className="px-8 py-4 bg-background border-2 border-muted rounded-full font-semibold flex items-center gap-2 hover:bg-muted transition-colors"
                         >
                             Contact Me
+                        </motion.a>
+                        <motion.a
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            href={(portfolioData as any).cvUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-8 py-4 bg-blue-600/10 text-blue-600 border-2 border-blue-600/20 rounded-full font-semibold flex items-center gap-2 hover:bg-blue-600/20 transition-colors"
+                        >
+                            <Download className="w-5 h-5" />
+                            Download CV
                         </motion.a>
                     </div>
                 </motion.div>
