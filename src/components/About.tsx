@@ -16,7 +16,7 @@ export default function About() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 flex items-center gap-3">
+                        <h2 className="text-2xl md:text-4xl font-bold mb-6 flex items-center gap-3">
                             <User className="text-blue-600" />
                             About Me
                         </h2>

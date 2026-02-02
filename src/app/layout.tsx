@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingActions from "@/components/FloatingActions";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,16 +22,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased bg-background`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <div className="bg-background min-h-screen relative shadow-2xl">
+            <Navbar />
+            <main>
+              {children}
+            </main>
+            <Footer />
+            <FloatingActions />
+          </div>
         </ThemeProvider>
       </body>
     </html>
