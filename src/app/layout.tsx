@@ -29,7 +29,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="bg-background min-h-screen relative shadow-2xl">
+          <div className="bg-background min-h-screen relative shadow-2xl overflow-x-hidden">
             <Navbar />
             <main>
               {children}
