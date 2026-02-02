@@ -1,12 +1,13 @@
 
 export const portfolioData = {
     name: "Habtamu Baye",
-    role: "Full-Stack Web & Mobile Developer",
-    email: "habtamubaye758@gmail.com",
+    role: "Software Engineer || Full-Stack Web || Mobile App Developer",
+    email: "habtamubaye2127@gmail.com",
     phone: "+251 991 51 55 88",
     location: "Adama, Ethiopia",
     github: "https://github.com/habtamubaye-devsec",
     linkedin: "https://www.linkedin.com/in/habtamu-baye-262497205",
+    cvUrl: "https://drive.google.com/file/d/1HI7xaCDi9hwGKLgkZHOSPb0j9KwUAJZT/view?usp=sharing",
     summary: "Results-driven Software Engineer with strong experience in full-stack web development, mobile application development, and secure system design. Skilled in building scalable MERN and NestJS-based applications, RESTful APIs, and modern frontend systems using React and Next.js. Experienced in web penetration testing, DevOps workflows, and remote collaboration.",
 
     skills: [
