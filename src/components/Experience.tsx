@@ -12,7 +12,7 @@ export default function Experience() {
                 <div className="grid md:grid-cols-2 gap-16">
                     {/* Experience Column */}
                     <div>
-                        <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
+                        <h2 className="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-3">
                             <Building2 className="text-blue-600" />
                             Work Experience
                         </h2>
@@ -48,8 +48,8 @@ export default function Experience() {
                     </div>
 
                     {/* Education Column */}
-                    <div>
-                        <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
+                    <div id="education">
+                        <h2 className="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-3">
                             <GraduationCap className="text-blue-600" />
                             Education
                         </h2>
