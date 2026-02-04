@@ -7,13 +7,15 @@ import { Calendar, GraduationCap, Building2 } from "lucide-react";
 
 export default function Experience() {
     return (
-        <section id="experience" className="py-24">
+        // SEO: Semantic section with proper id and aria-label
+        <section id="experience" className="py-24" aria-labelledby="experience-heading">
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-2 gap-16">
                     {/* Experience Column */}
                     <div>
-                        <h2 className="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-3">
-                            <Building2 className="text-blue-600" />
+                        {/* SEO: Proper h2 heading for experience section */}
+                        <h2 id="experience-heading" className="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-3">
+                            <Building2 className="text-blue-600" aria-hidden="true" />
                             Work Experience
                         </h2>
                         <div className="space-y-12 relative before:absolute before:left-[17px] before:top-2 before:bottom-0 before:w-0.5 before:bg-muted">
@@ -49,8 +51,9 @@ export default function Experience() {
 
                     {/* Education Column */}
                     <div id="education">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-3">
-                            <GraduationCap className="text-blue-600" />
+                        {/* SEO: Proper h2 heading for education section */}
+                        <h2 id="education-heading" className="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-3" aria-labelledby="education-heading">
+                            <GraduationCap className="text-blue-600" aria-hidden="true" />
                             Education
                         </h2>
                         <div className="space-y-12">

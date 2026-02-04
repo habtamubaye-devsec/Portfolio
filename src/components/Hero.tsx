@@ -7,10 +7,11 @@ import { ArrowRight, Download } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section id="hero" className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
-            {/* Background blobs */}
-            <div className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-purple-400/20 rounded-full blur-3xl animate-pulse" />
+        // SEO: Using semantic section element with proper id for navigation
+        <section id="hero" className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden" aria-label="Hero section">
+            {/* Background blobs - decorative elements */}
+            <div className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
+            <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-purple-400/20 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
 
             <div className="container mx-auto px-4 text-center z-10">
                 <motion.div
@@ -18,12 +19,15 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
+                    {/* SEO: Badge for availability status */}
                     <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-blue-600 uppercase bg-blue-50 dark:bg-blue-900/30 rounded-full">
                         Available for New Projects
                     </span>
+                    {/* SEO: Main h1 heading - most important for SEO */}
                     <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tighter mb-6 leading-tight">
                         Hi, I'm <span className="text-blue-600 font-black">{portfolioData.name.split(" ")[0]}</span>
                     </h1>
+                    {/* SEO: Subtitle with role description - important keywords */}
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -33,15 +37,17 @@ export default function Hero() {
                         {portfolioData.role}
                     </motion.p>
 
+                    {/* SEO: Call-to-action buttons with descriptive aria-labels */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">
                         <motion.a
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             href="#projects"
                             className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white rounded-full font-bold flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/25"
+                            aria-label="View my portfolio projects"
                         >
                             View My Work
-                            <ArrowRight className="w-5 h-5" />
+                            <ArrowRight className="w-5 h-5" aria-hidden="true" />
                         </motion.a>
                         <motion.a
                             whileHover={{ scale: 1.05 }}
@@ -50,18 +56,21 @@ export default function Hero() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full sm:w-auto px-8 py-4 bg-blue-600/10 text-blue-600 border-2 border-blue-600/20 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-blue-600/20 transition-colors"
+                            aria-label="Download my CV/Resume (opens in new tab)"
                         >
-                            <Download className="w-5 h-5" />
+                            <Download className="w-5 h-5" aria-hidden="true" />
                             Download CV
                         </motion.a>
                     </div>
                 </motion.div>
 
-                <motion.div
+                {/* SEO: Code snippet showcase - using semantic figure element */}
+                <motion.figure
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
                     className="mt-20 flex justify-center"
+                    aria-label="Developer profile code snippet"
                 >
                     <div className="relative w-full max-w-4xl h-[400px] rounded-2xl overflow-hidden border bg-linear-to-b from-muted/50 to-muted/10 backdrop-blur-sm self-center flex items-center justify-center">
                         <div className="p-8 text-left font-mono text-sm">
@@ -79,7 +88,7 @@ export default function Hero() {
                             <p className="text-blue-400">{"}"};</p>
                         </div>
                     </div>
-                </motion.div>
+                </motion.figure>
             </div>
         </section>
     );

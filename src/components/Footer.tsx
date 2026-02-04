@@ -4,7 +4,8 @@ import { portfolioData } from "@/data/portfolio";
 
 export default function Footer() {
     return (
-        <footer className="py-12 border-t">
+        // SEO: Semantic footer element with proper structure
+        <footer className="py-12 border-t" role="contentinfo">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="text-center md:text-left">
@@ -16,33 +17,34 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <div className="flex items-center gap-6">
+                    {/* SEO: Social links with rel="me" for verification and proper aria-labels */}
+                    <nav className="flex items-center gap-6" aria-label="Social media links">
                         <a
                             href={portfolioData.github}
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer me"
                             className="text-muted-foreground hover:text-blue-600 transition-colors"
-                            aria-label="GitHub"
+                            aria-label={`Visit ${portfolioData.name}'s GitHub profile (opens in new tab)`}
                         >
-                            <Github className="w-5 h-5" />
+                            <Github className="w-5 h-5" aria-hidden="true" />
                         </a>
                         <a
                             href={portfolioData.linkedin}
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener noreferrer me"
                             className="text-muted-foreground hover:text-blue-600 transition-colors"
-                            aria-label="LinkedIn"
+                            aria-label={`Visit ${portfolioData.name}'s LinkedIn profile (opens in new tab)`}
                         >
-                            <Linkedin className="w-5 h-5" />
+                            <Linkedin className="w-5 h-5" aria-hidden="true" />
                         </a>
                         <a
                             href={`mailto:${portfolioData.email}`}
                             className="text-muted-foreground hover:text-blue-600 transition-colors"
-                            aria-label="Email"
+                            aria-label={`Send email to ${portfolioData.name}`}
                         >
-                            <Mail className="w-5 h-5" />
+                            <Mail className="w-5 h-5" aria-hidden="true" />
                         </a>
-                    </div>
+                    </nav>
                 </div>
             </div>
         </footer>

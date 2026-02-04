@@ -61,12 +61,14 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 bg-muted/30">
+        // SEO: Semantic section with proper id and aria-label
+        <section id="contact" className="py-24 bg-muted/30" aria-labelledby="contact-heading">
             <div className="container mx-auto px-4">
                 <div className="max-w-5xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12">
                         <div>
-                            <h2 className="text-2xl md:text-3xl font-bold mb-6">Let's Connect</h2>
+                            {/* SEO: Proper h2 heading for contact section */}
+                            <h2 id="contact-heading" className="text-2xl md:text-3xl font-bold mb-6">Let's Connect</h2>
                             <p className="text-muted-foreground mb-8 text-lg">
                                 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
                             </p>
@@ -107,45 +109,63 @@ export default function Contact() {
                                         className="space-y-6"
                                     >
                                         <div>
-                                            <label className="block text-sm font-medium mb-2">Name</label>
+                                            {/* SEO: Proper label with htmlFor for accessibility */}
+                                            <label htmlFor="name-input" className="block text-sm font-medium mb-2">Name</label>
                                             <input
+                                                id="name-input"
                                                 {...register("name")}
                                                 className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-blue-600 outline-none transition-all ${errors.name ? "border-red-500" : "border-muted"
                                                     }`}
                                                 placeholder="Your Name"
+                                                aria-required="true"
+                                                aria-invalid={errors.name ? "true" : "false"}
+                                                aria-describedby={errors.name ? "name-error" : undefined}
                                             />
-                                            {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
+                                            {errors.name && <p id="name-error" className="text-red-500 text-xs mt-1" role="alert">{errors.name.message}</p>}
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-medium mb-2">Email</label>
+                                            <label htmlFor="email-input" className="block text-sm font-medium mb-2">Email</label>
                                             <input
+                                                id="email-input"
+                                                type="email"
                                                 {...register("email")}
                                                 className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-blue-600 outline-none transition-all ${errors.email ? "border-red-500" : "border-muted"
                                                     }`}
                                                 placeholder="your@email.com"
+                                                aria-required="true"
+                                                aria-invalid={errors.email ? "true" : "false"}
+                                                aria-describedby={errors.email ? "email-error" : undefined}
                                             />
-                                            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+                                            {errors.email && <p id="email-error" className="text-red-500 text-xs mt-1" role="alert">{errors.email.message}</p>}
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-medium mb-2">Subject</label>
+                                            <label htmlFor="subject-input" className="block text-sm font-medium mb-2">Subject</label>
                                             <input
+                                                id="subject-input"
                                                 {...register("subject")}
                                                 className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-blue-600 outline-none transition-all ${errors.subject ? "border-red-500" : "border-muted"
                                                     }`}
                                                 placeholder="Project Inquiry"
+                                                aria-required="true"
+                                                aria-invalid={errors.subject ? "true" : "false"}
+                                                aria-describedby={errors.subject ? "subject-error" : undefined}
                                             />
-                                            {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
+                                            {errors.subject && <p id="subject-error" className="text-red-500 text-xs mt-1" role="alert">{errors.subject.message}</p>}
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-medium mb-2">Message</label>
+                                            <label htmlFor="message-input" className="block text-sm font-medium mb-2">Message</label>
                                             <textarea
+                                                id="message-input"
                                                 {...register("message")}
                                                 rows={4}
                                                 className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-blue-600 outline-none transition-all resize-none ${errors.message ? "border-red-500" : "border-muted"
                                                     }`}
                                                 placeholder="Tell me about your project..."
+                                                aria-required="true"
+                                                aria-invalid={errors.message ? "true" : "false"}
+                                                aria-describedby={errors.message ? "message-error" : undefined}
                                             />
-                                            {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
+                                            {errors.message && <p id="message-error" className="text-red-500 text-xs mt-1" role="alert">{errors.message.message}</p>}
                                         </div>
 
                                         {submitError && (
