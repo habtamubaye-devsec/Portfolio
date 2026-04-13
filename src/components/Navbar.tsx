@@ -60,8 +60,8 @@ export default function Navbar() {
         <>
             {/* Desktop Navbar - Sticky Full Width (relative to 70% container) */}
             <header
-                className={`sticky top-0 z-50 hidden lg:block transition-all duration-300 ${scrolled
-                    ? "bg-background/80 backdrop-blur-md border-b border-border/50 py-3"
+                className={`fixed top-0 left-0 w-full z-50 hidden lg:block transition-all duration-300 ${scrolled
+                    ? "bg-background/60 backdrop-blur-xl border-b border-border/40 py-3"
                     : "bg-transparent py-6"
                     }`}
             >

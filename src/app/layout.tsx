@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -13,33 +12,36 @@ const inter = Inter({
   display: "swap", // SEO: Optimize font loading
 });
 
-// SEO: Comprehensive metadata configuration
-export const metadata: Metadata = {
-  metadataBase: new URL("https://habtamubaye.vercel.app"), // Update with your actual domain
-  title: {
-    default: "Habtamu Baye | Full-Stack Web & Mobile Developer",
-    template: "%s | Habtamu Baye"
-  },
-  description: "Professional portfolio of Habtamu Baye, a Software Engineer specializing in full-stack web and mobile development with React, Next.js, Node.js, and NestJS. Experienced in building scalable applications and web security.",
-  keywords: [
-    "Habtamu Baye",
-    "Software Engineer",
-    "Full-Stack Developer",
-    "Web Developer",
-    "Mobile Developer",
-    "React Developer",
-    "Next.js Developer",
-    "Node.js Developer",
-    "NestJS Developer",
-    "React Native",
-    "TypeScript Developer",
-    "JavaScript Developer",
-    "Web Security",
-    "Penetration Testing",
-    "Portfolio",
-    "Ethiopia Developer",
-    "Adama Developer"
-  ],
+  // SEO: Comprehensive metadata configuration
+  export const metadata: Metadata = {
+    metadataBase: new URL("https://habtamubaye.vercel.app"),
+    title: {
+      default: "Habtamu Baye | Software Engineer & Full-Stack Developer",
+      template: "%s | Habtamu Baye"
+    },
+    description: "Professional portfolio of Habtamu Baye, a Software Engineer specializing in full-stack web and mobile development. Experienced in building scalable applications and secure systems.",
+    icons: {
+      icon: [
+        { url: '/icon.png' },
+        { url: '/favicon.png' },
+      ],
+      apple: '/icon.png',
+    },
+    keywords: [
+      "Habtamu Baye",
+      "Software Engineer",
+      "Full-Stack Developer",
+      "Web Developer",
+      "Mobile Developer",
+      "React Developer",
+      "Next.js Developer",
+      "Node.js Developer",
+      "NestJS Developer",
+      "React Native",
+      "TypeScript Developer",
+      "Web Security",
+      "Penetration Testing"
+    ],
   authors: [{ name: "Habtamu Baye", url: "https://habtamubaye.vercel.app" }],
   creator: "Habtamu Baye",
   publisher: "Habtamu Baye",
@@ -49,15 +51,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://habtamubaye.vercel.app",
-    title: "Habtamu Baye | Full-Stack Web & Mobile Developer",
-    description: "Professional portfolio showcasing full-stack web and mobile development projects. Specializing in React, Next.js, Node.js, and modern web technologies.",
+    title: "Habtamu Baye | Software Engineer & Full-Stack Developer",
+    description: "Personal portfolio of Habtamu Baye, featuring 20+ professional and open-source projects in web and mobile development. Expert in React, Next.js, and Node.js.",
     siteName: "Habtamu Baye Portfolio",
     images: [
       {
-        url: "/og-image.png", // Add this image to your public folder
+        url: "/projects/npis.png", // Using the best project image for OG
         width: 1200,
         height: 630,
-        alt: "Habtamu Baye - Full-Stack Developer Portfolio",
+        alt: "Habtamu Baye - Full-Stack Developer",
       },
     ],
   },
