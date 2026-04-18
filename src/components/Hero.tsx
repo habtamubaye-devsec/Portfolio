@@ -8,24 +8,24 @@ import { ArrowRight, Download } from "lucide-react";
 export default function Hero() {
     return (
         // SEO: Using semantic section element with proper id for navigation
-        <section id="hero" className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden" aria-label="Hero section">
+        <section id="hero" className="section-full relative overflow-hidden " aria-label="Introduction">
             {/* Background blobs - decorative elements */}
-            <div className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
+            <div className="absolute top-1/4 -left-20 w-72 h-72 bg-[#d7ccbb]/20 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
             <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-purple-400/20 rounded-full blur-3xl animate-pulse" aria-hidden="true" />
 
-            <div className="container mx-auto px-4 text-center z-10">
+            <div className="container mx-auto px-4 text-center z-10 mt-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
                     {/* SEO: Badge for availability status */}
-                    <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-blue-600 uppercase bg-blue-50 dark:bg-blue-900/30 rounded-full">
+                    <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-accent-text uppercase bg-[#d7ccbb]/10 dark:bg-[#d7ccbb]/20 rounded-full">
                         Available for New Projects
                     </span>
                     {/* SEO: Main h1 heading - most important for SEO */}
                     <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold tracking-tighter mb-6 leading-tight">
-                        Hi, I'm <span className="text-blue-600 font-black">{portfolioData.name.split(" ")[0]}</span>
+                        Hi, I'm <span className="text-accent-text font-black">{portfolioData.name}</span>
                     </h1>
                     {/* SEO: Subtitle with role description - important keywords */}
                     <motion.p
@@ -43,7 +43,7 @@ export default function Hero() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             href="#projects"
-                            className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white rounded-full font-bold flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/25"
+                            className="w-full sm:w-auto px-8 py-4 bg-[#d7ccbb] text-[#1a1a1a] rounded-full font-bold flex items-center justify-center gap-2 hover:bg-[#c4b9a8] transition-colors shadow-lg shadow-[#d7ccbb]/25"
                             aria-label="View my portfolio projects"
                         >
                             View My Work
@@ -55,7 +55,7 @@ export default function Hero() {
                             href={(portfolioData as any).cvUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full sm:w-auto px-8 py-4 bg-blue-600/10 text-blue-600 border-2 border-blue-600/20 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-blue-600/20 transition-colors"
+                            className="w-full sm:w-auto px-8 py-4 bg-[#d7ccbb]/10 text-accent-text border-2 border-[#d7ccbb]/20 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-[#d7ccbb]/20 transition-colors"
                             aria-label="Download my CV/Resume (opens in new tab)"
                         >
                             <Download className="w-5 h-5" aria-hidden="true" />
@@ -74,7 +74,7 @@ export default function Hero() {
                 >
                     <div className="relative w-full max-w-4xl h-[400px] rounded-2xl overflow-hidden border bg-linear-to-b from-muted/50 to-muted/10 backdrop-blur-sm self-center flex items-center justify-center">
                         <div className="p-8 text-left font-mono text-sm">
-                            <p className="text-blue-400">const developer = {"{"}</p>
+                            <p className="text-accent-text/70">const developer = {"{"}</p>
                             <div className="pl-6">
                                 <p><span className="text-purple-400">name:</span> "{portfolioData.name}",</p>
                                 <p><span className="text-purple-400">role:</span> "{portfolioData.role}",</p>
@@ -85,7 +85,7 @@ export default function Hero() {
                                 <p>],</p>
                                 <p><span className="text-purple-400">passion:</span> "Building scalable web & mobile solutions"</p>
                             </div>
-                            <p className="text-blue-400">{"}"};</p>
+                            <p className="text-accent-text/70">{"}"};</p>
                         </div>
                     </div>
                 </motion.figure>
