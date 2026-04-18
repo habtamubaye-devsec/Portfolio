@@ -60,7 +60,7 @@ export default function Navbar() {
         <>
             {/* Desktop Navbar - Sticky Full Width (relative to 70% container) */}
             <header
-                className={`fixed top-0 left-0 w-full z-50 hidden lg:block transition-all duration-300  ${scrolled
+                className={`fixed top-0 left-0 lg:left-[15%] w-full lg:w-[70%] z-50 hidden lg:block transition-all duration-300 ${scrolled
                     ? "bg-transparent py-3"
                     : "bg-transparent py-6"
                     }`}
@@ -77,18 +77,18 @@ export default function Navbar() {
                                 href={link.href}
                                 onClick={() => setActiveSection(link.name)}
                                 className={`relative px-4 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-2 group ${activeSection === link.name
-                                    ? "text-[#1a1a1a]"
+                                    ? "text-[#fafafa]"
                                     : "text-foreground/60 hover:text-foreground"
                                     }`}
                             >
                                 {activeSection === link.name && (
                                     <motion.div
                                         layoutId="active-pill"
-                                        className="absolute inset-0 bg-[#d7ccbb] rounded-full -z-10 shadow-lg shadow-[#d7ccbb]/20"
+                                        className="absolute inset-0 bg-primary rounded-full -z-10 shadow-lg shadow-primary/20"
                                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                     />
                                 )}
-                                <link.icon className={`w-4 h-4 ${activeSection === link.name ? "text-[#1a1a1a]" : "text-foreground/40 group-hover:text-accent-text"}`} />
+                                <link.icon className={`w-4 h-4 ${activeSection === link.name ? "text-primary-foreground" : "text-foreground/40 group-hover:text-accent-text"}`} />
                                 <span>{link.name}</span>
                             </Link>
                         ))}
@@ -100,7 +100,7 @@ export default function Navbar() {
                             href={(portfolioData as any).cvUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-5 py-2.5 bg-[#d7ccbb] text-[#1a1a1a] rounded-full text-sm font-bold hover:bg-[#c4b9a8] transition-all shadow-lg shadow-[#d7ccbb]/25 active:scale-95"
+                            className="px-5 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-bold hover:opacity-90 transition-all shadow-lg shadow-primary/25 active:scale-95"
                         >
                             Resume
                         </a>
@@ -168,7 +168,7 @@ export default function Navbar() {
                                         }}
                                         className="flex items-center gap-4 py-2 transition-all group active:scale-95"
                                     >
-                                        <div className={`p-2.5 rounded-xl transition-colors ${activeSection === link.name ? "bg-[#d7ccbb] text-[#1a1a1a] shadow-lg shadow-[#d7ccbb]/20" : "bg-secondary text-muted-foreground group-hover:bg-[#d7ccbb]/10 group-hover:text-accent-text"}`}>
+                                        <div className={`p-2.5 rounded-xl transition-colors ${activeSection === link.name ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20" : "bg-secondary text-muted-foreground group-hover:bg-primary/10 group-hover:text-accent-text"}`}>
                                             <link.icon className="w-5 h-5" />
                                         </div>
                                         <span className={`text-lg font-bold ${activeSection === link.name ? "text-accent-text" : "text-foreground/70"}`}>{link.name}</span>
@@ -181,7 +181,7 @@ export default function Navbar() {
                                     href={(portfolioData as any).cvUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full py-5 bg-[#d7ccbb] text-[#1a1a1a] rounded-2xl font-bold flex items-center justify-center gap-2 shadow-xl shadow-[#d7ccbb]/30 active:scale-95 transition-transform"
+                                    className="w-full py-5 bg-primary text-primary-foreground rounded-2xl font-bold flex items-center justify-center gap-2 shadow-xl shadow-primary/30 active:scale-95 transition-transform"
                                 >
                                     <Briefcase className="w-5 h-5" />
                                     Download CV

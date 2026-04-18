@@ -79,8 +79,8 @@ export default function Contact() {
                                     { icon: Phone, label: "Phone", value: "+251 991 51 55 88" },
                                     { icon: MapPin, label: "Location", value: "Adama, Ethiopia" },
                                 ].map((item, i) => (
-                                    <div key={i} className="flex items-center gap-4  border-[#d7ccbb] rounded-xl p-4 shadow-2xs shadow-[#d7ccbb]">
-                                        <div className="w-12 h-12 rounded-full bg-[#d7ccbb]/10 flex items-center justify-center text-accent-text">
+                                    <div key={i} className="flex items-center gap-4 border-primary rounded-xl p-4 shadow-2xs shadow-primary">
+                                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-accent-text">
                                             <item.icon className="w-6 h-6" />
                                         </div>
                                         <div>
@@ -114,7 +114,7 @@ export default function Contact() {
                                             <input
                                                 id="name-input"
                                                 {...register("name")}
-                                                className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-[#d7ccbb] outline-none transition-all ${errors.name ? "border-red-500" : "border-muted"
+                                                className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary outline-none transition-all ${errors.name ? "border-red-500" : "border-muted"
                                                     }`}
                                                 placeholder="Your Name"
                                                 aria-required="true"
@@ -129,7 +129,7 @@ export default function Contact() {
                                                 id="email-input"
                                                 type="email"
                                                 {...register("email")}
-                                                className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-[#d7ccbb] outline-none transition-all ${errors.email ? "border-red-500" : "border-muted"
+                                                className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary outline-none transition-all ${errors.email ? "border-red-500" : "border-muted"
                                                     }`}
                                                 placeholder="your@email.com"
                                                 aria-required="true"
@@ -143,7 +143,7 @@ export default function Contact() {
                                             <input
                                                 id="subject-input"
                                                 {...register("subject")}
-                                                className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-[#d7ccbb] outline-none transition-all ${errors.subject ? "border-red-500" : "border-muted"
+                                                className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary outline-none transition-all ${errors.subject ? "border-red-500" : "border-muted"
                                                     }`}
                                                 placeholder="Project Inquiry"
                                                 aria-required="true"
@@ -158,7 +158,7 @@ export default function Contact() {
                                                 id="message-input"
                                                 {...register("message")}
                                                 rows={4}
-                                                className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-[#d7ccbb] outline-none transition-all resize-none ${errors.message ? "border-red-500" : "border-muted"
+                                                className={`w-full px-4 py-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary outline-none transition-all resize-none ${errors.message ? "border-red-500" : "border-muted"
                                                     }`}
                                                 placeholder="Tell me about your project..."
                                                 aria-required="true"
@@ -181,7 +181,7 @@ export default function Contact() {
                                         <button
                                             type="submit"
                                             disabled={isSubmitting}
-                                            className="w-full py-4 bg-[#d7ccbb] text-[#1a1a1a] font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-[#c4b9a8] transition-all disabled:opacity-50 shadow-lg shadow-[#d7ccbb]/20"
+                                            className="w-full py-4 bg-primary text-primary-foreground font-bold rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-all disabled:opacity-50 shadow-lg shadow-primary/20"
                                         >
                                             {isSubmitting ? "Sending..." : "Send Message"}
                                             <Send className="w-5 h-5" />
@@ -203,7 +203,7 @@ export default function Contact() {
                                         </p>
                                         <button
                                             onClick={resetForm}
-                                            className="px-8 py-3 bg-[#d7ccbb] text-[#1a1a1a] font-semibold rounded-xl hover:bg-[#c4b9a8] transition-all"
+                                            className="px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-xl hover:opacity-90 transition-all"
                                         >
                                             Send Another Message
                                         </button>

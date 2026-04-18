@@ -15,9 +15,9 @@ function ProjectImage({ src, title, tags }: { src: string; title: string, tags: 
         const lowerTitle = title.toLowerCase();
         const lowerTags = tags.map(t => t.toLowerCase());
 
-        if (lowerTitle.includes("voting")) return <div className="relative"><Cpu className="w-16 h-16" /><div className="absolute -top-2 -right-2 bg-[#d7ccbb] w-6 h-6 rounded-full flex items-center justify-center text-[10px] text-[#1a1a1a]">✓</div></div>;
+        if (lowerTitle.includes("voting")) return <div className="relative"><Cpu className="w-16 h-16" /><div className="absolute -top-2 -right-2 bg-primary w-6 h-6 rounded-full flex items-center justify-center text-[10px] text-primary-foreground">✓</div></div>;
         if (lowerTitle.includes("food") || lowerTitle.includes("delivery")) return <Monitor className="w-16 h-16" />;
-        if (lowerTitle.includes("cyber") || lowerTitle.includes("security") || lowerTitle.includes("penetration")) return <div className="relative"><Cpu className="w-16 h-16" /><div className="absolute inset-0 bg-[#d7ccbb]/10 animate-pulse rounded-full" /></div>;
+        if (lowerTitle.includes("cyber") || lowerTitle.includes("security") || lowerTitle.includes("penetration")) return <div className="relative"><Cpu className="w-16 h-16" /><div className="absolute inset-0 bg-primary/10 animate-pulse rounded-full" /></div>;
         if (lowerTitle.includes("dental") || lowerTitle.includes("clinic")) return <Tablet className="w-16 h-16" />;
         if (lowerTags.includes("mobile") || lowerTags.includes("react native") || lowerTitle.includes("mobile")) return <Smartphone className="w-16 h-16" />;
         if (lowerTags.includes("nest") || lowerTags.includes("node") || lowerTags.includes("backend")) return <Code2 className="w-16 h-16" />;
@@ -44,7 +44,7 @@ function ProjectImage({ src, title, tags }: { src: string; title: string, tags: 
                 <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
                 
                 {/* Glowing Aura */}
-                <div className="absolute w-32 h-32 bg-[#d7ccbb]/20 blur-3xl rounded-full" />
+                <div className="absolute w-32 h-32 bg-primary/20 blur-3xl rounded-full" />
                 
                 <div className="relative z-10 text-white/40 group-hover:text-white/70 group-hover:scale-110 transition-all duration-700">
                     {getIcon()}
@@ -150,7 +150,7 @@ export default function Projects() {
                                         tags={project.tags}
                                     />
                                     {/* Overlay on hover */}
-                                    <div className="absolute inset-0 bg-[#d7ccbb]/0 group-hover:bg-[#d7ccbb]/10 transition-colors" />
+                                    <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors" />
                                 </div>
 
                                 <div className="p-6 flex flex-col flex-1">
@@ -183,7 +183,7 @@ export default function Projects() {
                                             href={project.liveUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex-1 px-4 py-2 bg-[#d7ccbb] text-[#1a1a1a] text-sm font-semibold rounded-lg flex items-center justify-center gap-2 hover:bg-[#c4b9a8] transition-colors shadow-sm"
+                                            className="flex-1 px-4 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition-colors shadow-sm"
                                             aria-label={`View live demo of ${project.title} (opens in new tab)`}
                                         >
                                             Live Demo
@@ -210,7 +210,7 @@ export default function Projects() {
                     <div className="flex justify-center mt-8">
                         <button
                             onClick={() => setShowAll(!showAll)}
-                            className="group flex items-center gap-2 px-8 py-4 bg-card border rounded-full font-semibold hover:bg-muted hover:border-[#d7ccbb]/30 transition-all shadow-sm hover:shadow-md"
+                            className="group flex items-center gap-2 px-8 py-4 bg-card border rounded-full font-semibold hover:bg-muted hover:border-primary/30 transition-all shadow-sm hover:shadow-md"
                             aria-expanded={showAll}
                             aria-controls="projects-grid"
                         >

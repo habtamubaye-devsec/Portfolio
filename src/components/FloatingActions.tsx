@@ -12,9 +12,9 @@ export default function FloatingActions() {
                 animate={{
                     y: [0, -8, 0],
                     boxShadow: [
-                        "0 10px 25px -5px rgba(215, 204, 187, 0.3)",
-                        "0 20px 40px -10px rgba(215, 204, 187, 0.5)",
-                        "0 10px 25px -5px rgba(215, 204, 187, 0.3)",
+                        "0 10px 25px -5px rgba(37, 99, 235, 0.3)",
+                        "0 20px 40px -10px rgba(37, 99, 235, 0.5)",
+                        "0 10px 25px -5px rgba(37, 99, 235, 0.3)",
                     ],
                 }}
                 transition={{
@@ -27,7 +27,7 @@ export default function FloatingActions() {
                 href={(portfolioData as any).cvUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 md:w-14 md:h-14 bg-linear-to-tr from-[#a89e90] to-[#d7ccbb] text-[#1a1a1a] rounded-xl flex items-center justify-center cursor-pointer border border-white/20 shadow-xl transition-all z-10"
+                className="w-11 h-11 md:w-14 md:h-14 bg-linear-to-tr from-primary to-primary/80 text-primary-foreground rounded-xl flex items-center justify-center cursor-pointer border border-white/20 shadow-xl transition-all z-10"
                 aria-label="Download CV"
                 title="Download CV"
             >
@@ -39,9 +39,9 @@ export default function FloatingActions() {
                 animate={{
                     y: [0, -8, 0],
                     boxShadow: [
-                        "0 10px 25px -5px rgba(215, 204, 187, 0.3)",
-                        "0 20px 40px -10px rgba(215, 204, 187, 0.5)",
-                        "0 10px 25px -5px rgba(215, 204, 187, 0.3)",
+                        "0 10px 25px -5px rgba(37, 99, 235, 0.3)",
+                        "0 20px 40px -10px rgba(37, 99, 235, 0.5)",
+                        "0 10px 25px -5px rgba(37, 99, 235, 0.3)",
                     ],
                 }}
                 transition={{
@@ -53,7 +53,7 @@ export default function FloatingActions() {
                 whileHover={{ scale: 1.08, rotate: -5 }}
                 whileTap={{ scale: 0.92 }}
                 href="#contact"
-                className="w-11 h-11 md:w-14 md:h-14 bg-linear-to-tr from-[#8c8078] to-[#d7ccbb] text-[#1a1a1a] rounded-xl flex items-center justify-center cursor-pointer border border-white/20 shadow-xl transition-all"
+                className="w-11 h-11 md:w-14 md:h-14 bg-linear-to-tr from-primary/80 to-primary text-primary-foreground rounded-xl flex items-center justify-center cursor-pointer border border-white/20 shadow-xl transition-all"
                 aria-label="Contact Me"
                 title="Contact Me"
             >

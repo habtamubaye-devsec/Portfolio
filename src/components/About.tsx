@@ -44,7 +44,7 @@ export default function About() {
 
     return (
         <section id="about" className="section-full bg-muted/30" aria-labelledby="about-heading">
-            <div className="container mx-auto px-4  mt-20">
+            <div className="container mx-auto px-4 my-0 lg:my-20 mt-20">
                 <div className="grid lg:grid-cols-2 gap-16 items-start ">
                     {/* Left Column: Bio */}
                     <motion.div

@@ -9,7 +9,7 @@ export default function Experience() {
     return (
         // SEO: Semantic section with proper id and aria-label
         <section id="experience" className="section-full" aria-labelledby="experience-heading">
-            <div className="container mx-auto px-4 mt-20">
+            <div className="container mx-auto px-4 my-0 lg:my-20">
                 <div className="grid md:grid-cols-2 gap-16">
                     {/* Experience Column */}
                     <div>
@@ -28,7 +28,7 @@ export default function Experience() {
                                     transition={{ delay: index * 0.1 }}
                                     className="relative pl-12"
                                 >
-                                    <div className="absolute left-0 top-1 w-9 h-9 bg-background border-2 border-[#d7ccbb] rounded-full flex items-center justify-center z-10">
+                                    <div className="absolute left-0 top-1 w-9 h-9 bg-background border-2 border-primary rounded-full flex items-center justify-center z-10">
                                         <Calendar className="w-4 h-4 text-accent-text" />
                                     </div>
                                     <div>

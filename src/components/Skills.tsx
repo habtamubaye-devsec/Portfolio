@@ -86,7 +86,7 @@ export default function Skills() {
     return (
         // SEO: Semantic section with proper id and aria-label
         <section id="skills" className="section-full bg-muted/50" aria-labelledby="skills-heading">
-            <div className="container mx-auto px-4 mt-20">
+            <div className="container mx-auto px-4 my-0 lg:my-20">
                 <header className="mb-16 text-center">
                     {/* SEO: Proper h2 heading for section */}
                     <motion.div
