@@ -169,12 +169,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         {/* SEO: Theme color for mobile browsers */}
-        <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#3b82f6" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#d7ccbb" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#d7ccbb" media="(prefers-color-scheme: dark)" />
       </head>
       <body className={`${inter.className} antialiased bg-background`}>
         {/* SEO: Skip to main content link for accessibility */}
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#d7ccbb] focus:text-[#1a1a1a] focus:rounded-lg">
           Skip to main content
         </a>
         <ThemeProvider

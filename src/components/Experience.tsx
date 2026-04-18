@@ -8,14 +8,14 @@ import { Calendar, GraduationCap, Building2 } from "lucide-react";
 export default function Experience() {
     return (
         // SEO: Semantic section with proper id and aria-label
-        <section id="experience" className="py-24" aria-labelledby="experience-heading">
-            <div className="container mx-auto px-4">
+        <section id="experience" className="section-full" aria-labelledby="experience-heading">
+            <div className="container mx-auto px-4 mt-20">
                 <div className="grid md:grid-cols-2 gap-16">
                     {/* Experience Column */}
                     <div>
                         {/* SEO: Proper h2 heading for experience section */}
                         <h2 id="experience-heading" className="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-3">
-                            <Building2 className="text-blue-600" aria-hidden="true" />
+                            <Building2 className="text-accent-text" aria-hidden="true" />
                             Work Experience
                         </h2>
                         <div className="space-y-12 relative before:absolute before:left-[17px] before:top-2 before:bottom-0 before:w-0.5 before:bg-muted">
@@ -28,17 +28,17 @@ export default function Experience() {
                                     transition={{ delay: index * 0.1 }}
                                     className="relative pl-12"
                                 >
-                                    <div className="absolute left-0 top-1 w-9 h-9 bg-background border-2 border-blue-600 rounded-full flex items-center justify-center z-10">
-                                        <Calendar className="w-4 h-4 text-blue-600" />
+                                    <div className="absolute left-0 top-1 w-9 h-9 bg-background border-2 border-[#d7ccbb] rounded-full flex items-center justify-center z-10">
+                                        <Calendar className="w-4 h-4 text-accent-text" />
                                     </div>
                                     <div>
-                                        <span className="text-sm font-bold text-blue-600 uppercase tracking-wider">{exp.period}</span>
+                                        <span className="text-sm font-bold text-accent-text uppercase tracking-wider">{exp.period}</span>
                                         <h3 className="text-xl font-bold mt-1 text-foreground">{exp.role}</h3>
                                         <p className="text-muted-foreground font-medium mb-4">{exp.company}</p>
                                         <ul className="space-y-2">
                                             {exp.description.map((bullet, i) => (
                                                 <li key={i} className="text-sm text-muted-foreground flex gap-2">
-                                                    <span className="text-blue-600">•</span>
+                                                    <span className="text-accent-text">•</span>
                                                     {bullet}
                                                 </li>
                                             ))}
@@ -53,7 +53,7 @@ export default function Experience() {
                     <div id="education">
                         {/* SEO: Proper h2 heading for education section */}
                         <h2 id="education-heading" className="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-3" aria-labelledby="education-heading">
-                            <GraduationCap className="text-blue-600" aria-hidden="true" />
+                            <GraduationCap className="text-accent-text" aria-hidden="true" />
                             Education
                         </h2>
                         <div className="space-y-12">
@@ -66,7 +66,7 @@ export default function Experience() {
                                     transition={{ delay: index * 0.1 }}
                                     className="p-6 rounded-2xl border bg-card hover:bg-muted/30 transition-colors"
                                 >
-                                    <span className="text-sm font-bold text-blue-600 uppercase tracking-wider">{edu.period}</span>
+                                    <span className="text-sm font-bold text-accent-text uppercase tracking-wider">{edu.period}</span>
                                     <h3 className="text-xl font-bold mt-1">{edu.degree}</h3>
                                     <p className="text-muted-foreground font-medium">{edu.school}</p>
                                     <p className="text-sm text-muted-foreground mt-2">{edu.location}</p>

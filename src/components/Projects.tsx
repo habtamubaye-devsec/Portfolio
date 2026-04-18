@@ -15,9 +15,9 @@ function ProjectImage({ src, title, tags }: { src: string; title: string, tags: 
         const lowerTitle = title.toLowerCase();
         const lowerTags = tags.map(t => t.toLowerCase());
 
-        if (lowerTitle.includes("voting")) return <div className="relative"><Cpu className="w-16 h-16" /><div className="absolute -top-2 -right-2 bg-blue-600 w-6 h-6 rounded-full flex items-center justify-center text-[10px] text-white">✓</div></div>;
-        if (lowerTitle.includes("food") || lowerTitle.includes("delivery")) return <Monitor className="w-16 h-16" />; 
-        if (lowerTitle.includes("cyber") || lowerTitle.includes("security") || lowerTitle.includes("penetration")) return <div className="relative"><Cpu className="w-16 h-16" /><div className="absolute inset-0 bg-blue-600/10 animate-pulse rounded-full" /></div>;
+        if (lowerTitle.includes("voting")) return <div className="relative"><Cpu className="w-16 h-16" /><div className="absolute -top-2 -right-2 bg-[#d7ccbb] w-6 h-6 rounded-full flex items-center justify-center text-[10px] text-[#1a1a1a]">✓</div></div>;
+        if (lowerTitle.includes("food") || lowerTitle.includes("delivery")) return <Monitor className="w-16 h-16" />;
+        if (lowerTitle.includes("cyber") || lowerTitle.includes("security") || lowerTitle.includes("penetration")) return <div className="relative"><Cpu className="w-16 h-16" /><div className="absolute inset-0 bg-[#d7ccbb]/10 animate-pulse rounded-full" /></div>;
         if (lowerTitle.includes("dental") || lowerTitle.includes("clinic")) return <Tablet className="w-16 h-16" />;
         if (lowerTags.includes("mobile") || lowerTags.includes("react native") || lowerTitle.includes("mobile")) return <Smartphone className="w-16 h-16" />;
         if (lowerTags.includes("nest") || lowerTags.includes("node") || lowerTags.includes("backend")) return <Code2 className="w-16 h-16" />;
@@ -29,10 +29,10 @@ function ProjectImage({ src, title, tags }: { src: string; title: string, tags: 
     const getGradient = () => {
         const hash = title.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0) % 4;
         const gradients = [
-            "from-blue-600 to-indigo-900",
+            "from-[#a89e90] to-[#5c534a]",
             "from-slate-900 to-slate-800",
-            "from-indigo-900 to-purple-900",
-            "from-blue-900 to-slate-900"
+            "from-[#8c8078] to-[#4a3f38]",
+            "from-[#6b6059] to-slate-900"
         ];
         return gradients[hash];
     };
@@ -44,7 +44,7 @@ function ProjectImage({ src, title, tags }: { src: string; title: string, tags: 
                 <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
                 
                 {/* Glowing Aura */}
-                <div className="absolute w-32 h-32 bg-blue-500/20 blur-3xl rounded-full" />
+                <div className="absolute w-32 h-32 bg-[#d7ccbb]/20 blur-3xl rounded-full" />
                 
                 <div className="relative z-10 text-white/40 group-hover:text-white/70 group-hover:scale-110 transition-all duration-700">
                     {getIcon()}
@@ -56,7 +56,7 @@ function ProjectImage({ src, title, tags }: { src: string; title: string, tags: 
                     <span className="text-[10px] text-center text-white/50 font-mono tracking-[0.2em] uppercase whitespace-nowrap overflow-hidden text-ellipsis">
                         {title}
                     </span>
-                    <span className="text-[8px] text-center text-blue-400/50 font-mono tracking-tighter uppercase">Professional System</span>
+                    <span className="text-[8px] text-center text-accent-text/50 font-mono tracking-tighter uppercase">Professional System</span>
                 </div>
             </div>
         );
@@ -76,7 +76,7 @@ function ProjectImage({ src, title, tags }: { src: string; title: string, tags: 
 
 export default function Projects() {
     const [showAll, setShowAll] = useState(false);
-    const initialDisplayCount = 12;
+    const initialDisplayCount = 8;
 
     const displayedProjects = showAll 
         ? portfolioData.projects 
@@ -112,11 +112,11 @@ export default function Projects() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsSchema) }}
             />
 
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4 ">
                 <header className="mb-16 text-center">
                     {/* SEO: Proper h2 heading for section */}
                     <h2 id="projects-heading" className="text-2xl md:text-3xl font-bold mb-4 flex items-center justify-center gap-3">
-                        <Briefcase className="text-blue-600" aria-hidden="true" />
+                        <Briefcase className="text-accent-text" aria-hidden="true" />
                         Featured Projects
                     </h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -125,7 +125,7 @@ export default function Projects() {
                 </header>
 
                 {/* SEO: Using article elements for each project */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12">
                     <AnimatePresence mode="popLayout">
                         {displayedProjects.map((project, index) => (
                             <motion.article
@@ -150,21 +150,25 @@ export default function Projects() {
                                         tags={project.tags}
                                     />
                                     {/* Overlay on hover */}
-                                    <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors" />
+                                    <div className="absolute inset-0 bg-[#d7ccbb]/0 group-hover:bg-[#d7ccbb]/10 transition-colors" />
                                 </div>
 
                                 <div className="p-6 flex flex-col flex-1">
                                     {/* SEO: Technology tags with proper semantic markup */}
                                     <div className="flex flex-wrap gap-2 mb-4" role="list" aria-label="Technologies used">
-                                        {project.tags.slice(0, 3).map((tag) => (
-                                            <span key={tag} className="text-[10px] uppercase tracking-wider font-bold text-blue-600" role="listitem">
+                                        {project.tags.slice(0, 4).map((tag) => (
+                                            <span 
+                                                key={tag} 
+                                                className="text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 bg-secondary/50 text-accent-text border border-accent-text/10 rounded-md backdrop-blur-xs hover:bg-accent-text hover:text-white transition-all duration-300"
+                                                role="listitem"
+                                            >
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
 
                                     {/* SEO: Project title as h3 heading */}
-                                    <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">
+                                    <h3 className="text-xl font-bold mb-2 group-hover:text-accent-text transition-colors">
                                         {project.title}
                                     </h3>
 
@@ -179,7 +183,7 @@ export default function Projects() {
                                             href={project.liveUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex-1 px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors shadow-sm"
+                                            className="flex-1 px-4 py-2 bg-[#d7ccbb] text-[#1a1a1a] text-sm font-semibold rounded-lg flex items-center justify-center gap-2 hover:bg-[#c4b9a8] transition-colors shadow-sm"
                                             aria-label={`View live demo of ${project.title} (opens in new tab)`}
                                         >
                                             Live Demo
@@ -206,17 +210,17 @@ export default function Projects() {
                     <div className="flex justify-center mt-8">
                         <button
                             onClick={() => setShowAll(!showAll)}
-                            className="group flex items-center gap-2 px-8 py-4 bg-card border rounded-full font-semibold hover:bg-muted hover:border-blue-600/30 transition-all shadow-sm hover:shadow-md"
+                            className="group flex items-center gap-2 px-8 py-4 bg-card border rounded-full font-semibold hover:bg-muted hover:border-[#d7ccbb]/30 transition-all shadow-sm hover:shadow-md"
                             aria-expanded={showAll}
                             aria-controls="projects-grid"
                         >
-                            <span className="text-blue-600">
+                            <span className="text-accent-text">
                                 {showAll ? "Show Less" : `View All Projects (${portfolioData.projects.length})`}
                             </span>
                             {showAll ? (
-                                <ChevronUp className="w-5 h-5 text-blue-600 group-hover:-translate-y-1 transition-transform" />
+                                <ChevronUp className="w-5 h-5 text-accent-text group-hover:-translate-y-1 transition-transform" />
                             ) : (
-                                <ChevronDown className="w-5 h-5 text-blue-600 group-hover:translate-y-1 transition-transform" />
+                                <ChevronDown className="w-5 h-5 text-accent-text group-hover:translate-y-1 transition-transform" />
                             )}
                         </button>
                     </div>
@@ -225,4 +229,3 @@ export default function Projects() {
         </section>
     );
 }
-

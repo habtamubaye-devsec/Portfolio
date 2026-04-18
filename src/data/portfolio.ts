@@ -1,14 +1,14 @@
 
 export const portfolioData = {
     name: "Habtamu Baye",
-    role: "Software Engineer || Full-Stack Web || Mobile App Developer",
+    role: "Software Engineer || Full-Stack Web Developer || Mobile App Developer || AI Automation",
     email: "habtamubaye2127@gmail.com",
     phone: "+251 991 51 55 88",
-    location: "Adama, Ethiopia",
+    location: "Addis Ababa, Ethiopia",
     github: "https://github.com/habtamubaye-devsec",
     linkedin: "https://www.linkedin.com/in/habtamu-baye-262497205",
     cvUrl: "https://drive.google.com/file/d/1HI7xaCDi9hwGKLgkZHOSPb0j9KwUAJZT/view?usp=sharing",
-    summary: "Results-driven Software Engineer with strong experience in full-stack web development, mobile application development, and secure system design. Skilled in building scalable MERN and NestJS-based applications, RESTful APIs, and modern frontend systems using React and Next.js. Experienced in web penetration testing, DevOps workflows, and remote collaboration.",
+    summary: "Results-driven Software Engineer with extensive experience in full-stack web development, mobile application development, and AI Automation. I specialize in building high-quality, scalable applications using modern technologies like React, Next.js, and NestJS, while maintaining a strong focus on secure system design and clean architecture. Based in Addis Ababa, I thrive on solving complex problems through modular and maintainable code.",
 
     skills: [
         { category: "Languages", items: ["JavaScript", "TypeScript", "Python"] },
